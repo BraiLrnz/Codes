@@ -1,2 +1,2 @@
 # Codes
-Codigo para calculadora grafica en python.
+Repositorio para subir codigos personales.
