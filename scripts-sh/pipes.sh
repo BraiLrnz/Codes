@@ -13,11 +13,11 @@ read st2
 
 if [ "$st1" \< "$st2" ]
 then
-	echo "$st1 tiene menos letras que $st2"
+	echo "$st1 is smaller than $st2"
 
-elif [ "$st1" \< "$st2" ]
+elif [ "$st1" \> "$st2" ]
 then
-	echo "$st2 tiene mas letras que $st1"
+	echo "$st2 is smaller than $st1"
 else
 	echo "Son iguales"
 fi
