@@ -1,6 +1,11 @@
 #! /bin/bash
 
-cat << value
-Hola Gracias Por ejecutar Mi Script!
-value
-#Comments
+n1=4
+n2=20
+
+echo $(( n1 + n2 ))
+echo $(( n1 - n2 ))
+echo $(( n1 * n2 ))
+echo $(( n1 / n2 ))
+echo $(( n1 % n2 ))
+
