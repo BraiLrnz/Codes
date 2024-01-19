@@ -1,6 +1,3 @@
 #! /bin/bash
 
-cat << value
-Hola Gracias Por ejecutar Mi Script!
-value
-#Comments
+ssmtp thiuy456@gmail.com
