@@ -1,6 +1,17 @@
 #! /bin/bash
 
-cat << value
-Hola Gracias Por ejecutar Mi Script!
-value
-#Comments
+
+car=('BMW' 'Toyota' 'Honda' 'Mazda')
+
+
+unset car[3]
+
+car[3]='Loncin'
+
+echo "${car[@]}"
+
+echo "${car[1]}"
+
+echo "${!car[@]}"
+
+echo "${#car[@]}"
