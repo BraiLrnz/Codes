@@ -1,6 +1,6 @@
 
 # Imprimir cualquier string por consola
-print("hello world 1")
+print("hello world 1"
 print("hello world 2")
 print("Hello World 3")
 
@@ -37,3 +37,5 @@ first_name = input("Cual es tu nombre? ")
 last_name = input("Cual es tu apellido? ")
 #print("Tu nombre es: ",first_name, last_name)
 print(f"Tu nombre es: {first_name} {last_name} ")
+
+print("Estoy escribiendo codigo desde nvim")
