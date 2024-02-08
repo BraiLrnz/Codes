@@ -50,6 +50,7 @@ Lateral Movement*
 ## **Nmap**
 
 `nmap 10.129.42.253` → Escaneo Basico.
+
 `nmap -sV -sC -p- 10.129.42.253` → Escaneo un poco mas especifico donde -sC es para correr scripts -sV para obtener la version del servicio y -p- para escanear todos los puertos.
 
 `/usr/share/nmap/scripts/` → Ruta de scripts de nmap.
