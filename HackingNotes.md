@@ -15,11 +15,11 @@ Lateral Movement*
 
 ## **Comandos Primarios**
 
-`tree` → para ver la estrcutura de una carpeta o directorio.
+`tree` → para ver la estructura de una carpeta o directorio.
 
 `netstat -rn` → para ver las interfaces de red.
 
- `netcat 10.10.10.10 22` → capturar informacion de un servicio con netcat.
+`netcat 10.10.10.10 22` → capturar información de un servicio con netcat.
 
 ## Puertos y Protocolos
 
@@ -60,6 +60,16 @@ Lateral Movement*
 
 `nmap -A -p445 10.129.42.253` → -A activa la deteccion del sistema operativo.
 
+`nmap -sV --open -oA initial_scan 10.10.10.10` → En este comando —open es para que muestre unicamente los puertos abiertos y -oA es para que nos genere todos los formatos disponibles en este caso formato grepeable, nmap y xml.
+
+`nmap -v -oG -` → Nos permite ver todos los puertos que escanea nmap.
+
+`nc -nv 10.129.42.190 80` → Podemos hacer lo “mismo” que con nmap. 
+
+`nmap -sC -p 22,80 -oA nibbles_script_scan 10.129.42.190` → Para escanear puertos especificos.
+
+`nmap -sV --script=http-enum -oA nibbles_nmap_http_enum 10.129.42.190` → Script para enumerar directorios comunes de una aplicación web.
+
 ## FTP
 
 `ftp -p 10.129.42.253` → Conectarse a un host.
@@ -68,7 +78,11 @@ Lateral Movement*
 
 `smbclient -N -L \\\\10.129.42.253` → Mapeo basico de SMB.
 
+`smbclient -L //10.129.193.130/ -U etrix` → Enumerar usuarios validos teniendo una contraseña.
+
 `smbclient \\\\10.129.42.253\\users` → Acceder a un recurso especifico.
+
+`smbclient //10.129.193.130/SOC\ Analysis -U dwolfe` → Para espacapar espacios de un recurso.
 
 `smbclient -U bob \\\\10.129.42.253\\users` → Teniendo un usuario valido.
 
@@ -92,11 +106,15 @@ Lateral Movement*
 
 `curl http://SERVER_IP:PORT/shell.php?cmd=id` → Obtendremos el resultado del comando.
 
+`curl -s http://10.129.42.190/nibbleblog/content/private/users.xml | xmllint  --format -` → En este comando la opcion -s indica modo silent donde se redirige la repsuesta a formato xml.
+
 ## Whatweb
 
 `whatweb 10.10.10.121`
 
 `whatweb --no-errors 10.10.10.0/24`
+
+`whatweb http://10.129.42.190/nibbleblog` → Se puede lanzar un whatweb a un directorio especifico.
 
 ***Nota: Es importante revisar los certificados TLS y revisar el archivo robots.txt***
 
@@ -281,3 +299,38 @@ brailrnz@htb[/htb]$ md5sum shell
 user@remotehost$ md5sum shell
 321de1d7e7c3735838890a72c9ae7d1d shell
 ```
+
+### Documentos preparados en un test de penetración
+
+| Document | Timing for Creation |
+| --- | --- |
+| 1. Non-Disclosure Agreement (NDA) | After Initial Contact |
+| 2. Scoping Questionnaire | Before the Pre-Engagement Meeting |
+| 3. Scoping Document | During the Pre-Engagement Meeting |
+| 4. Penetration Testing Proposal (Contract/Scope of Work (SoW)) | During the Pre-engagement Meeting |
+| 5. Rules of Engagement (RoE) | Before the Kick-Off Meeting |
+| 6. Contractors Agreement (Physical Assessments) | Before the Kick-Off Meeting |
+| 7. Reports | During and after the conducted Penetration Test |
+
+### Analísis
+
+| Analysis Type | Description |
+| --- | --- |
+| Descriptive | Descriptive analysis is essential in any data analysis. On the one 
+hand, it describes a data set based on individual characteristics. It 
+helps to detect possible errors in data collection or outliers in the 
+data set. |
+| Diagnostic | Diagnostic analysis clarifies conditions' causes, effects, and 
+interactions. Doing so provides insights that are obtained through 
+correlations and interpretation. We must take a backward-looking view, 
+similar to descriptive analysis, with the subtle difference that we try 
+to find reasons for events and developments. |
+| Predictive | By evaluating historical and current data, predictive analysis 
+creates a predictive model for future probabilities. Based on the 
+results of descriptive and diagnostic analyses, this method of data 
+analysis makes it possible to identify trends, detect deviations from 
+expected values at an early stage, and predict future occurrences as 
+accurately as possible. |
+| Prescriptive | Prescriptive analytics aims to narrow down what actions to take to 
+eliminate or prevent a future problem or trigger a specific activity or 
+process. |
