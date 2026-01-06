@@ -1,2 +1,2 @@
 # Codes
-Repositorio para subir codigos personales.
+Repository to upload personal codes and learnings.
